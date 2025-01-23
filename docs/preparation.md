@@ -81,7 +81,6 @@ CONEX est une plateforme web innovante conçue pour enrichir la vie étudiante e
 - **Frontend**: React.js avec Material-UI
 - **Backend**: Node.js avec Express
 - **Base de données**: MongoDB
-- **Authentication**: JWT avec OAuth
 - **Real-time**: Socket.io pour les notifications
 
 ## Fonctionnalités Prioritaires (MVP)
