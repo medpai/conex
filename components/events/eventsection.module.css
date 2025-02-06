@@ -1,50 +1,56 @@
+/* Section principale avec un padding et un positionnement relatif */
 .section {
-    padding: 6rem 2rem;
-    position: relative;
-    z-index: 1;
+  padding: 6rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Conteneur centré avec une largeur maximale de 1200px */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* En-tête principal avec du texte centré, un dégradé et un effet de texte transparent */
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sous-titre avec du texte centré et une couleur grise */
+.subheading {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 1.125rem;
+  margin-bottom: 3rem;
+}
+
+/* Grille responsive qui s'ajuste selon la largeur de l'écran */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Adaptations pour les écrans de moins de 768px */
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1rem;
   }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
+
   .heading {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: white;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
   }
-  
-  .subheading {
-    text-align: center;
-    color: #94a3b8;
-    font-size: 1.125rem;
-    margin-bottom: 3rem;
-  }
-  
+
   .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr;
   }
-  
-  @media (max-width: 768px) {
-    .section {
-      padding: 4rem 1rem;
-    }
-    
-    .heading {
-      font-size: 2rem;
-    }
-    
-    .grid {
-      grid-template-columns: 1fr;
-    }
-  }
+}
   

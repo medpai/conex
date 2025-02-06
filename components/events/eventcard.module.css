@@ -1,91 +1,104 @@
+/* Style de la carte */
 .card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .imageContainer {
-    position: relative;
-    height: 200px;
-  }
-  
-  .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .category {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: rgba(79, 70, 229, 0.9);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    font-weight: 500;
-  }
-  
-  .content {
-    padding: 1.5rem;
-  }
-  
-  .title {
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-  
-  .details {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .detail {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #94a3b8;
-    font-size: 0.875rem;
-  }
-  
-  .icon {
-    color: #4f46e5;
-  }
-  
-  .description {
-    color: #94a3b8;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-  }
-  
-  .button {
-    display: inline-block;
-    background-color: #2563eb;
-    color: white;
-    padding: 0.75rem 2rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-decoration: none;
-    text-align: center;
-  }
-  
-  .button:hover {
-    background-color: #1d4ed8;
-    transform: translateY(-1px);
-  }
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol de la carte */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Conteneur de l'image */
+.imageContainer {
+  position: relative;
+  height: 200px;
+}
+
+/* Style de l'image */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Style de la catégorie */
+.category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(79, 70, 229, 0.9);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Contenu de la carte */
+.content {
+  padding: 1.5rem;
+}
+
+/* Titre de la carte */
+.title {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Détails sous le titre */
+.details {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Détail individuel */
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+/* Couleur de l'icône */
+.icon {
+  color: #4f46e5;
+}
+
+/* Description */
+.description {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Style du bouton */
+.button {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Effet au survol du bouton */
+.button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
