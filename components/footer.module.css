@@ -1,0 +1,113 @@
+/* Section du footer avec fond sombre et flou */
+.footer {
+  background: rgba(2, 6, 23, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4rem 0 2rem;
+  color: #94a3b8;
+  position: relative;
+  z-index: 1;
+}
+
+/* Conteneur central avec largeur maximale et espacement */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Grille adaptative avec des colonnes responsives */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Styles pour les titres des sections */
+.section h3 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Styles pour les paragraphes des sections */
+.section p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Styles pour les listes sans puces */
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Espacement entre les éléments de la liste */
+.section ul li {
+  margin-bottom: 0.75rem;
+}
+
+/* Liens dans les listes avec transition */
+.section ul li a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Effet au survol des liens */
+.section ul li a:hover {
+  color: #fff;
+}
+
+/* Disposition flexible des icônes sociales */
+.social {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Styles pour les icônes sociales */
+.social a {
+  color: #94a3b8;
+  transition: all 0.3s ease;
+}
+
+/* Effet au survol des icônes sociales */
+.social a:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Section du bas avec alignement centré */
+.bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Texte dans la section inférieure avec petite taille de police */
+.bottom p {
+  font-size: 0.875rem;
+}
+
+/* Styles responsives pour les écrans plus petits */
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .grid {
+    gap: 2rem;
+  }
+
+  .section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .section ul li {
+    margin-bottom: 0.5rem;
+  }
+}
+

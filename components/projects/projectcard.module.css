@@ -1,238 +1,319 @@
+/* Style général de la carte */
 .card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Conteneur de l'image */
+.imageContainer {
+  position: relative;
+  height: 200px;
+}
+
+/* Image à l'intérieur du conteneur */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Style pour la catégorie affichée en haut à gauche */
+.category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(79, 70, 229, 0.9);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Contenu de la carte */
+.content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Titre de la carte */
+.title {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Informations sur l'étudiant */
+.student {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #94a3b8;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+/* Image de l'étudiant */
+.studentImageContainer {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #4f46e5;
+  flex-shrink: 0;
+}
+
+.studentImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Icône utilisée dans la carte */
+.icon {
+  color: #4f46e5;
+}
+
+/* Description du projet */
+.description {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+/* Technologies utilisées pour le projet */
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tech {
+  background: rgba(79, 70, 229, 0.2);
+  color: #818cf8;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Bouton permettant d'afficher plus d'informations */
+.toggleButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: rgba(79, 70, 229, 0.1);
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  color: #818cf8;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+/* Effet au survol du bouton */
+.toggleButton:hover {
+  background: rgba(79, 70, 229, 0.2);
+}
+
+/* Icône du chevron */
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.chevronUp {
+  transform: rotate(180deg);
+}
+
+/* Positions détaillées en bas de la carte */
+.positions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(2, 6, 23, 0.98);
+  backdrop-filter: blur(16px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 0.5rem;
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+/* Carte pour chaque position */
+.positionCard {
+  background: rgba(79, 70, 229, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.positionCard:last-child {
+  margin-bottom: 0;
+}
+
+/* Titre de chaque position */
+.positionTitle {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Badge indiquant un poste */
+.spotBadge {
+  display: inline-block;
+  background: rgba(79, 70, 229, 0.2);
+  color: #818cf8;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+/* Label des compétences requises */
+.skillsLabel {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Liste des compétences */
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skill {
+  background: rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+/* Bouton pour appliquer */
+.applyButton {
+  width: 100%;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Effet au survol du bouton d'application */
+.applyButton:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Superposition du modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+/* Modal de la carte */
+.modal {
+  background: rgb(17, 24, 39);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: modalSlideUp 0.3s ease-out;
+}
+
+/* Entête du modal */
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Titre du modal */
+.modalHeader h3 {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Bouton de fermeture du modal */
+.closeButton {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+/* Effet au survol du bouton de fermeture */
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Contenu du modal */
+.modalContent {
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-height: calc(90vh - 80px);
+}
+
+/* Animation du modal */
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .imageContainer {
-    position: relative;
-    height: 200px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .category {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: rgba(79, 70, 229, 0.9);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    font-weight: 500;
-  }
-  
-  .content {
-    padding: 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .title {
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  
-  .student {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #94a3b8;
-    font-size: 0.875rem;
-    margin-bottom: 1rem;
-  }
-  
-  .studentImageContainer {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid #4f46e5;
-    flex-shrink: 0;
-  }
-  
-  .studentImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .icon {
-    color: #4f46e5;
-  }
-  
-  .description {
-    color: #94a3b8;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    flex: 1;
-  }
-  
-  .technologies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .tech {
-    background: rgba(79, 70, 229, 0.2);
-    color: #818cf8;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-  
-  .toggleButton {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    background: rgba(79, 70, 229, 0.1);
-    border: 1px solid rgba(79, 70, 229, 0.2);
-    color: #818cf8;
-    padding: 0.75rem 1rem;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: auto;
-  }
-  
-  .toggleButton:hover {
-    background: rgba(79, 70, 229, 0.2);
-  }
-  
-  .chevron {
-    transition: transform 0.3s ease;
-  }
-  
-  .chevronUp {
-    transform: rotate(180deg);
-  }
-  
-  .positions {
-    margin-top: 1rem;
-    animation: slideDown 0.3s ease-out;
-  }
-  
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .positionCard {
-    background: rgba(79, 70, 229, 0.1);
-    border-radius: 12px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .positionHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
-  }
-  
-  .positionTitle {
-    color: white;
-    font-weight: 600;
-    font-size: 1rem;
-  }
-  
-  .positionBadge {
-    background: rgba(79, 70, 229, 0.3);
-    color: #818cf8;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-  
-  .positionDetails {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  
-  .skillsRequired {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .detailLabel {
-    color: #94a3b8;
-    font-size: 0.875rem;
-  }
-  
-  .skillTags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  
-  .skillTag {
-    background: rgba(255, 255, 255, 0.1);
-    color: #94a3b8;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-  
-  .button {
-    width: 100%;
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-  }
-  
-  .button:hover {
-    opacity: 0.9;
-  }
-  
-  .applyButton {
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-  }
-  
-  .applyButton:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-  }
-  
+}

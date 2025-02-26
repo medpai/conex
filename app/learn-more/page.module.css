@@ -1,0 +1,206 @@
+/* Container principal avec une couleur de fond sombre */
+.container {
+  min-height: 100vh;
+  background: rgb(2, 6, 23);
+  color: white;
+}
+
+/* Section héro avec un fond en dégradé et une image */
+.hero {
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(2, 6, 23, 0.8), rgb(2, 6, 23)),
+              url('/hero-bg.jpg') center/cover;
+}
+
+/* Titre avec un effet de dégradé sur le texte */
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sous-titre avec une couleur plus claire et largeur maximale */
+.subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Contenu avec largeur limitée et espacement */
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Marges entre les sections */
+.section {
+  margin-bottom: 6rem;
+}
+
+/* Titres des sections avec couleur spécifique */
+.section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #2563eb;
+}
+
+/* Grilles de disposition flexible pour les fonctionnalités, étapes, et bénéfices */
+.features, .steps, .benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Styles des éléments de la fonctionnalité et des bénéfices */
+.feature, .benefit {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Effet de survol pour les éléments de fonctionnalité et bénéfices */
+.feature:hover, .benefit:hover {
+  transform: translateY(-5px);
+}
+
+/* Titre des fonctionnalités et bénéfices avec couleur spécifique */
+.feature h3, .benefit h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #2563eb;
+}
+
+/* Texte des fonctionnalités et bénéfices */
+.feature p, .benefit p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* Section des étapes avec alignement central */
+.step {
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+/* Numéro des étapes dans un cercle avec dégradé */
+.stepNumber {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-weight: 700;
+}
+
+/* Titre et texte des étapes */
+.step h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #2563eb;
+}
+
+.step p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Section Call-to-Action avec fond flouté */
+.cta {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+/* Titre du Call-to-Action */
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2563eb;
+}
+
+/* Texte du Call-to-Action */
+.cta p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+/* Disposition des boutons avec espacement */
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Styles généraux des boutons */
+.primaryButton, .secondaryButton {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Bouton principal avec dégradé */
+.primaryButton {
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  color: white;
+}
+
+/* Bouton secondaire avec fond transparent et bordure */
+.secondaryButton {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Effet de survol pour le bouton principal */
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Effet de survol pour le bouton secondaire */
+.secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Réajustement des styles pour les petits écrans */
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 1rem 3rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .content {
+    padding: 2rem 1rem;
+  }
+
+  .section {
+    margin-bottom: 4rem;
+  }
+
+  .features, .steps, .benefits {
+    grid-template-columns: 1fr;
+  }
+}

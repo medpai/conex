@@ -1,44 +1,48 @@
 'use client';
+//Importation des composants
 import EventDetails from '@/components/events/EventDetails';
 import socialImg from '@/img/social.jpg';
 import styles from './page.module.css';
 
 export default function SocialEventPage() {
+  // Programme de la soiree
   const schedule = [
     { time: '18:30', activity: 'Accueil & Cocktail de Bienvenue' },
     { time: '19:00', activity: 'Mot de Bienvenue & Introduction' },
     { time: '19:15', activity: 'Session de Speed Networking' },
-    { time: '20:00', activity: 'Buffet Dînatoire & Networking Libre' },
-    { time: '20:45', activity: 'Présentations Éclair (5 min)' },
+    { time: '20:00', activity: 'Buffet Dinatoire & Networking Libre' },
+    { time: '20:45', activity: 'Presentations Eclair (5 min)' },
     { time: '21:30', activity: 'Networking & Discussions' },
-    { time: '22:30', activity: 'Clôture de l\'événement' }
+    { time: '22:30', activity: 'Cloture de l\'evenement' }
   ];
 
+  // Points forts de l'evenement
   const highlights = [
     {
       title: 'Speed Networking',
-      description: 'Sessions structurées de 5 minutes pour maximiser vos rencontres'
+      description: 'Sessions structurees de 5 minutes pour maximiser vos rencontres'
     },
     {
-      title: 'Présentations Éclair',
-      description: 'Opportunité de présenter votre projet ou entreprise'
+      title: 'Presentations Eclair',
+      description: 'Opportunite de presenter votre projet ou entreprise'
     },
     {
       title: 'Buffet Gourmet',
-      description: 'Une sélection de mets raffinés et boissons'
+      description: 'Une selection de mets raffines et boissons'
     }
   ];
 
+  // Liste des intervenants
   const speakers = [
     {
       name: 'Sophie Dubois',
       role: 'CEO, TechMontreal',
-      topic: 'L\'avenir de la Tech à Montréal'
+      topic: 'L\'avenir de la Tech a Montreal'
     },
     {
       name: 'Marc Tremblay',
       role: 'Fondateur, StartupQC',
-      topic: 'Écosystème Startup'
+      topic: 'Ecosysteme Startup'
     },
     {
       name: 'Julie Chen',
@@ -50,19 +54,21 @@ export default function SocialEventPage() {
   return (
     <main className={styles.main}>
       <div className={styles.eventContainer}>
+        {/* Details de l'evenement */}
         <EventDetails
-          title="Soirée Networking CONEX"
+          title="Soiree Networking CONEX"
           date="22 Mars 2024"
-          description="Participez à notre soirée networking exclusive dédiée aux professionnels de la tech et de l'entrepreneuriat. Une occasion unique de rencontrer des personnes passionnées, d'échanger des idées et de créer des connexions durables.\n\nDans une ambiance sophistiquée au Salon Richmond, venez développer votre réseau professionnel tout en profitant d'un buffet gourmet et de présentations inspirantes."
+          description="Participez a notre soiree networking exclusive dediee aux professionnels de la tech et de l'entrepreneuriat. Une occasion unique de rencontrer des personnes passionnees, d'echanger des idees et de creer des connexions durables.\n\nDans une ambiance sophistiquee au Salon Richmond, venez developper votre reseau professionnel tout en profitant d'un buffet gourmet et de presentations inspirantes."
           imagePath={socialImg}
-          location="Le Salon Richmond - Montréal"
+          location="Le Salon Richmond - Montreal"
           participants="100"
           category="Social"
         />
 
         <section className={styles.additionalInfo}>
+          {/* Programme de la soiree */}
           <div className={styles.infoCard}>
-            <h2>Programme de la Soirée</h2>
+            <h2>Programme de la Soiree</h2>
             <div className={styles.schedule}>
               {schedule.map((item, index) => (
                 <div key={index} className={styles.scheduleItem}>
@@ -73,6 +79,7 @@ export default function SocialEventPage() {
             </div>
           </div>
 
+          {/* Points forts */}
           <div className={styles.infoCard}>
             <h2>Points Forts</h2>
             <div className={styles.highlights}>
@@ -85,6 +92,7 @@ export default function SocialEventPage() {
             </div>
           </div>
 
+          {/* Liste des intervenants */}
           <div className={styles.infoCard}>
             <h2>Intervenants</h2>
             <div className={styles.speakers}>
@@ -100,14 +108,15 @@ export default function SocialEventPage() {
             </div>
           </div>
 
+          {/* Avantages pour les participants */}
           <div className={styles.infoCard}>
             <h2>Ce Que Vous Obtiendrez</h2>
             <ul className={styles.benefits}>
-              <li>Opportunités de networking ciblées</li>
+              <li>Opportunites de networking ciblees</li>
               <li>Connexions avec des leaders de l'industrie</li>
-              <li>Visibilité pour votre entreprise/projet</li>
-              <li>Accès à la communauté CONEX</li>
-              <li>Buffet et boissons de qualité</li>
+              <li>Visibilite pour votre entreprise/projet</li>
+              <li>Acces a la communaute CONEX</li>
+              <li>Buffet et boissons de qualite</li>
             </ul>
           </div>
         </section>

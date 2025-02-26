@@ -1,17 +1,19 @@
+// Importations
 import styles from './eventsection.module.css';
 import EventCard from './eventcard';
 import socialImg from '@/img/social.jpg';
 import techImg from '@/img/tech.jpg';
 import careerImg from '@/img/career.jpg';
 
+// Définition des événements à venir avec leurs détails
 const upcomingEvents = [
   {
-    title: "Freshman Welcome Party",
-    date: "Jan 25, 2025",
-    location: "Student Center",
-    category: "Social",
-    image: socialImg,
-    description: "Join us for an unforgettable evening of music, games, and making new friends! Perfect for new students to connect."
+    title: "Freshman Welcome Party", // Titre de l'événement
+    date: "Jan 25, 2025", // Date de l'événement
+    location: "Student Center", // Lieu de l'événement
+    category: "Social", // Catégorie de l'événement
+    image: socialImg, // Image associée à l'événement
+    description: "Join us for an unforgettable evening of music, games, and making new friends! Perfect for new students to connect." // Description de l'événement
   },
   {
     title: "Tech Club Hackathon",
@@ -31,15 +33,19 @@ const upcomingEvents = [
   }
 ];
 
+// Fonction principale pour afficher la section des événements à venir
 export default function EventSection() {
   return (
+    // Section principale contenant tous les éléments des événements à venir
     <section className={styles.section}>
       <div className={styles.container}>
-        <h2 className={styles.heading}>Upcoming Events</h2>
-        <p className={styles.subheading}>Discover exciting events and activities happening on campus</p>
+        <h2 className={styles.heading}>Upcoming Events</h2> {/* Titre principal */}
+        <p className={styles.subheading}>Discover exciting events and activities happening on campus</p> {/* Sous-titre */}
+        
+        {/* Grille d'événements, chaque événement est affiché dans un composant EventCard */}
         <div className={styles.grid}>
           {upcomingEvents.map((event, index) => (
-            <EventCard key={index} {...event} />
+            <EventCard key={index} {...event} /> // Création d'un EventCard pour chaque événement
           ))}
         </div>
       </div>

@@ -1,0 +1,64 @@
+/* Conteneur principal : centrage, marges et espacement */
+.container {
+  padding: 8rem 2rem 4rem; /* Espacement interne */
+  max-width: 1200px; /* Largeur maximale */
+  margin: 0 auto; /* Centrage horizontal */
+}
+
+/* Titre avec dégrade et effets de texte */
+.title {
+  font-size: 3rem; /* Taille du titre */
+  font-weight: 800; /* Poids du texte */
+  text-align: center; /* Centrage */
+  margin-bottom: 3rem; /* Espacement sous le titre */
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%); /* Degrade */
+  -webkit-background-clip: text; /* Applique le degrade */
+  -webkit-text-fill-color: transparent; /* Rend le texte transparent */
+}
+
+/* Grille de contenu avec espacement */
+.content {
+  display: grid; /* Disposition en grille */
+  gap: 3rem; /* Espacement entre elements */
+  color: #fff; /* Texte blanc */
+}
+
+/* Section avec fond flou et bordure */
+.section {
+  background: rgba(255, 255, 255, 0.05); /* Fond leger */
+  padding: 2rem; /* Espacement interne */
+  border-radius: 1rem; /* Coins arrondis */
+  backdrop-filter: blur(10px); /* Flou arriere-plan */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Bordure legere */
+}
+
+/* Titre de section : taille et couleur */
+.section h2 {
+  font-size: 1.5rem; /* Taille */
+  margin-bottom: 1rem; /* Espacement sous le titre */
+  color: #2563eb; /* Couleur bleue */
+}
+
+/* Texte de section : lisible et espace */
+.section p {
+  line-height: 1.6; /* Hauteur de ligne */
+  color: rgba(255, 255, 255, 0.9); /* Couleur claire */
+}
+
+/* Liste en grille responsive */
+.valuesList {
+  list-style: none; /* Retirer les puces */
+  padding: 0; /* Retirer l'espacement */
+  display: grid; /* Grille flexible */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Colonnes adaptatives */
+  gap: 1rem; /* Espacement entre elements */
+}
+
+/* Style des elements de la liste */
+.valuesList li {
+  padding: 1rem; /* Espacement interne */
+  background: rgba(37, 99, 235, 0.1); /* Fond bleu leger */
+  border-radius: 0.5rem; /* Coins arrondis */
+  text-align: center; /* Centrage du texte */
+  border: 1px solid rgba(37, 99, 235, 0.2); /* Bordure subtile */
+}

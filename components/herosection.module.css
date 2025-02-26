@@ -1,113 +1,125 @@
+/* Style de la section hero */
 .hero {
-    padding: 6rem 2rem;
-    background-color: rgb(2, 6, 23);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .hero::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    background-image: 
-      linear-gradient(to right, rgba(79, 79, 79, 0.18) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(79, 79, 79, 0.18) 1px, transparent 1px);
-    background-size: 14px 24px;
-    mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
-    -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
-  }
-  
-  .container {
-    position: relative;
-    z-index: 1;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
+  padding: 6rem 2rem;
+  background-color: rgb(2, 6, 23);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Effet de masque et de grille sur le background */
+.hero::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-image: 
+    linear-gradient(to right, rgba(79, 79, 79, 0.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(79, 79, 79, 0.18) 1px, transparent 1px);
+  background-size: 14px 24px;
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+}
+
+/* Conteneur centré du contenu */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Style du titre principal */
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+/* Effet de texte avec un dégradé */
+.highlight {
+  background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Style du sous-titre */
+.subtitle {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+/* Groupe de boutons avec un espacement */
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Style du bouton principal */
+.primaryButton {
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  color: white;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Effet de survol pour le bouton principal */
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15);
+}
+
+/* Style du bouton secondaire */
+.secondaryButton {
+  background: white;
+  color: #2563eb;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Effet de survol pour le bouton secondaire */
+.secondaryButton:hover {
+  transform: translateY(-2px);
+  background: #f8fafc;
+  box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15);
+}
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 1rem;
   }
   
   .title {
-    font-size: 4rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    color: #ffffff;
-  }
-  
-  .highlight {
-    background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
   }
   
   .subtitle {
-    font-size: 1.25rem;
-    color: #94a3b8;
-    max-width: 600px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.6;
+    font-size: 1.125rem;
   }
   
   .buttonGroup {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
+    flex-direction: column;
   }
-  
-  .primaryButton {
-    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
-    color: white;
-    padding: 0.875rem 2rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  }
-  
-  .primaryButton:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15);
-  }
-  
-  .secondaryButton {
-    background: white;
-    color: #2563eb;
-    padding: 0.875rem 2rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  }
-  
-  .secondaryButton:hover {
-    transform: translateY(-2px);
-    background: #f8fafc;
-    box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15);
-  }
-  
-  @media (max-width: 768px) {
-    .hero {
-      padding: 4rem 1rem;
-    }
-    
-    .title {
-      font-size: 2.5rem;
-    }
-    
-    .subtitle {
-      font-size: 1.125rem;
-    }
-    
-    .buttonGroup {
-      flex-direction: column;
-    }
-  }
+}

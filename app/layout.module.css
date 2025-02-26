@@ -1,30 +1,31 @@
-.body{
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    
-    
-}
-.main {
-  position: relative;
-  min-height: 100vh;
-  background-color: rgb(2, 6, 23);
-  flex: 1;
+/* Configuration de base du body */
+.body {
+  margin: 0; /* Supprime les marges par défaut */
+  min-height: 100vh; /* Hauteur minimale de l'écran */
+  display: flex; /* Utilisation de flexbox */
+  flex-direction: column; /* Organisation en colonne */
 }
 
+/* Conteneur principal */
+.main {
+  min-height: 100vh; /* Occupe toute la hauteur */
+  position: relative; /* Position relative pour superposition */
+  z-index: 1; /* Assure la superposition correcte */
+  padding-bottom: 2rem; /* Espace en bas */
+  background-color: rgb(2, 6, 23); /* Fond sombre */
+  flex: 1; /* Remplit l'espace disponible */
+}
+
+/* Effet de quadrillage en arrière-plan */
 .main::before {
-  content: '';
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
+  content: ''; /* Élément vide pour l'effet */
+  position: fixed; /* Fixe l'élément en arrière-plan */
+  bottom: 0; left: 0; right: 0; top: 0; /* Couvre tout l'écran */
   background-image: 
     linear-gradient(to right, rgba(79, 79, 79, 0.18) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(79, 79, 79, 0.18) 1px, transparent 1px);
-  background-size: 14px 24px;
+    linear-gradient(to bottom, rgba(79, 79, 79, 0.18) 1px, transparent 1px); /* Quadrillage */
+  background-size: 14px 24px; /* Taille des lignes */
   mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
-  z-index: 0;
+  z-index: 0; /* Derrière le contenu */
 }

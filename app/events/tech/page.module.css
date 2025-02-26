@@ -1,3 +1,4 @@
+/* Section principale de la page avec un effet de flou en arriere-plan */
 .main {
   position: relative;
   min-height: 100vh;
@@ -6,6 +7,7 @@
   backdrop-filter: blur(10px);
 }
 
+/* Effet de grille en arriere-plan avec un degrade */
 .main::before {
   content: '';
   position: fixed;
@@ -22,6 +24,7 @@
   z-index: 0;
 }
 
+/* Conteneur principal des evenements */
 .eventContainer {
   position: relative;
   z-index: 1;
@@ -30,6 +33,7 @@
   padding: 2rem 1rem;
 }
 
+/* Conteneur pour les informations supplementaires, disposition en grille */
 .additionalInfo {
   margin-top: 4rem;
   display: grid;
@@ -38,6 +42,7 @@
   padding: 0 1rem;
 }
 
+/* Carte d'information avec effet de flou et transition */
 .infoCard {
   background: rgba(255, 255, 255, 0.03);
   border-radius: 1rem;
@@ -48,11 +53,13 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Effet au survol de la carte d'information */
 .infoCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Style des titres des cartes d'information */
 .infoCard h2 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -62,13 +69,14 @@
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Agenda Styles */
+/* Styles pour l'agenda */
 .agenda {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+/* Style des elements de l'agenda */
 .agendaItem {
   display: flex;
   align-items: center;
@@ -79,28 +87,32 @@
   transition: all 0.2s ease;
 }
 
+/* Effet au survol des elements de l'agenda */
 .agendaItem:hover {
   transform: translateX(4px);
   background: rgba(255, 255, 255, 0.08);
 }
 
+/* Style de l'heure affichee dans l'agenda */
 .time {
   font-weight: 600;
   color: #3b82f6;
   min-width: 4rem;
 }
 
+/* Style des activites dans l'agenda */
 .activity {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Speakers Styles */
+/* Styles pour les intervenants (speakers) */
 .speakers {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
+/* Style des blocs d'information des intervenants */
 .speaker {
   padding: 1rem;
   border-radius: 0.5rem;
@@ -108,11 +120,13 @@
   transition: all 0.2s ease;
 }
 
+/* Effet au survol des intervenants */
 .speaker:hover {
   transform: translateY(-2px);
   background: rgba(255, 255, 255, 0.08);
 }
 
+/* Style des noms et roles des intervenants */
 .speakerInfo h3 {
   font-size: 1.125rem;
   font-weight: 600;
@@ -120,6 +134,7 @@
   margin-bottom: 0.25rem;
 }
 
+/* Style du role des intervenants */
 .role {
   display: block;
   font-size: 0.875rem;
@@ -127,13 +142,14 @@
   margin-bottom: 0.25rem;
 }
 
+/* Style du sujet des interventions */
 .topic {
   display: block;
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* Learning Points Styles */
+/* Styles pour les points d'apprentissage */
 .learningPoints {
   list-style: none;
   padding: 0;
@@ -142,12 +158,14 @@
   gap: 1rem;
 }
 
+/* Style des elements de la liste des points d'apprentissage */
 .learningPoints li {
   position: relative;
   padding-left: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* Style du symbole precedant chaque point d'apprentissage */
 .learningPoints li::before {
   content: "→";
   position: absolute;
@@ -155,7 +173,7 @@
   color: #3b82f6;
 }
 
-/* Responsive Design */
+/* Adaptation du design pour les ecrans de petite taille */
 @media (max-width: 768px) {
   .additionalInfo {
     grid-template-columns: 1fr;
@@ -170,6 +188,7 @@
   }
 }
 
+/* Suppression des effets de survol pour les appareils tactiles */
 @media (hover: none) {
   .agendaItem:hover,
   .speaker:hover,

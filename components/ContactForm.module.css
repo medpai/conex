@@ -1,0 +1,133 @@
+/* Conteneur principal avec espacement et centrage */
+.container {
+  padding: 8rem 2rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Style du titre avec un gradient de texte */
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Disposition en grille pour le contenu */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  color: #fff;
+}
+
+/* Infos de contact sous forme de colonne */
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Style des elements d'information */
+.infoItem {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Titre des elements d'information */
+.infoItem h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #2563eb;
+}
+
+/* Texte des elements d'information */
+.infoItem p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* Formulaire avec espacement interne */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Styles des champs du formulaire */
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Style pour la zone de texte */
+.formGroup textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Effet de focus sur les champs du formulaire */
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Bouton de soumission stylise */
+.submitButton {
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+/* Effet au survol du bouton de soumission */
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Adaptation mobile avec grille en une seule colonne */
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Reorganisation des sections sur mobile */
+  .contactInfo {
+    order: 2;
+  }
+  
+  .form {
+    order: 1;
+  }
+}
+
+.error {
+  color: red;
+}

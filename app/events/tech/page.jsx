@@ -1,9 +1,13 @@
 'use client';
+
+// Importation du composant EventDetails
 import EventDetails from '@/components/events/EventDetails';
 import techImg from '@/img/tech.jpg';
 import styles from './page.module.css';
 
+// Fonction principale pour la page des evenements tech
 export default function TechEventPage() {
+  // Agenda de l'evenement
   const agenda = [
     { time: '09:00', activity: 'Registration & Breakfast' },
     { time: '10:00', activity: 'Opening Keynote: Future of AI' },
@@ -14,6 +18,7 @@ export default function TechEventPage() {
     { time: '19:00', activity: 'Awards Ceremony' }
   ];
 
+  // Liste des intervenants
   const speakers = [
     {
       name: 'Dr. Sarah Chen',
@@ -32,22 +37,24 @@ export default function TechEventPage() {
     }
   ];
 
+  // Retourne le rendu de la page
   return (
     <main className={styles.main}>
       <div className={styles.eventContainer}>
+        {/* Details de l'evenement */}
         <EventDetails
           title="AI & Innovation Hackathon 2024"
           date="15-16 Mars 2024"
-          description="Rejoignez-nous pour un hackathon exceptionnel centré sur l'intelligence artificielle et l'innovation technologique. Une opportunité unique de collaborer avec des experts du domaine, d'apprendre les dernières technologies, et de développer des solutions innovantes.\n\nCet événement rassemblera des développeurs, des designers et des entrepreneurs passionnés par l'IA et son impact sur notre futur."
+          description="Rejoignez-nous pour un hackathon exceptionnel centre sur l'intelligence artificielle et l'innovation technologique. Une opportunite unique de collaborer avec des experts du domaine, d'apprendre les dernieres technologies, et de developper des solutions innovantes.\n\nCet evenement rassemblera des developpeurs, des designers et des entrepreneurs passionnes par l'IA et son impact sur notre futur."
           imagePath={techImg}
-          location="Campus ÉTS - Montréal"
+          location="Campus ÉTS - Montreal"
           participants="150"
           category="Technology"
         />
-
+           {/* Programme de l'evenement */}
         <section className={styles.additionalInfo}>
           <div className={styles.infoCard}>
-            <h2>Programme de l'événement</h2>
+            <h2>Programme de l'evenement</h2>
             <div className={styles.agenda}>
               {agenda.map((item, index) => (
                 <div key={index} className={styles.agendaItem}>
@@ -57,7 +64,7 @@ export default function TechEventPage() {
               ))}
             </div>
           </div>
-
+          {/* Speakers */}
           <div className={styles.infoCard}>
             <h2>Speakers</h2>
             <div className={styles.speakers}>
@@ -72,7 +79,7 @@ export default function TechEventPage() {
               ))}
             </div>
           </div>
-
+           {/* ce que vous apprendrez */}
           <div className={styles.infoCard}>
             <h2>Ce que vous apprendrez</h2>
             <ul className={styles.learningPoints}>
@@ -80,7 +87,7 @@ export default function TechEventPage() {
               <li>Cloud Computing et Architecture Scalable</li>
               <li>DevOps et MLOps Best Practices</li>
               <li>Design Thinking et Innovation</li>
-              <li>Présentation et Pitch de Projets</li>
+              <li>Presentation et Pitch de Projets</li>
             </ul>
           </div>
         </section>

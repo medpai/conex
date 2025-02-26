@@ -1,3 +1,4 @@
+/* Container principal des détails de l'événement */
 .eventDetailsContainer {
   position: relative;
   z-index: 1;
@@ -10,6 +11,7 @@
   max-width: 1200px;
 }
 
+/* Container pour l'image */
 .imageContainer {
   position: relative;
   width: 100%;
@@ -17,18 +19,21 @@
   overflow: hidden;
 }
 
+/* Image de l'événement */
 .eventImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* Container pour le contenu */
 .contentContainer {
   padding: 2rem;
   color: #fff;
   background: rgba(2, 6, 23, 0.95);
 }
 
+/* Style de la catégorie de l'événement */
 .category {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -38,16 +43,19 @@
   margin-bottom: 1rem;
 }
 
+/* Catégorie 'Tech' */
 .tech {
   background-color: rgba(59, 130, 246, 0.2);
   color: #60a5fa;
 }
 
+/* Catégorie 'Social' */
 .social {
   background-color: rgba(236, 72, 153, 0.2);
   color: #f472b6;
 }
 
+/* Titre de l'événement */
 .title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -56,6 +64,7 @@
   line-height: 1.2;
 }
 
+/* Métadonnées de l'événement */
 .metadata {
   display: flex;
   flex-wrap: wrap;
@@ -63,6 +72,7 @@
   margin-bottom: 2rem;
 }
 
+/* Élément individuel de la métadonnée */
 .metaItem {
   display: flex;
   align-items: center;
@@ -70,10 +80,12 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* Icône des métadonnées */
 .icon {
   font-size: 1.25rem;
 }
 
+/* Description de l'événement */
 .description {
   font-size: 1.125rem;
   line-height: 1.75;
@@ -82,6 +94,7 @@
   margin-bottom: 2rem;
 }
 
+/* Bouton d'inscription à l'événement */
 .joinButton {
   background-color: #3b82f6;
   color: white;
@@ -104,7 +117,7 @@
   cursor: not-allowed;
 }
 
-/* Modal Styles */
+/* Styles pour la fenêtre modale */
 .modal {
   position: fixed;
   top: 0;
@@ -119,6 +132,7 @@
   backdrop-filter: blur(4px);
 }
 
+/* Contenu de la fenêtre modale */
 .modalContent {
   background: rgba(2, 6, 23, 0.95);
   padding: 2rem;
@@ -129,23 +143,27 @@
   color: #fff;
 }
 
+/* Titre dans la fenêtre modale */
 .modalContent h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #fff;
 }
 
+/* Texte dans la fenêtre modale */
 .modalContent p {
   margin-bottom: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* Boutons de la fenêtre modale */
 .modalButtons {
   display: flex;
   gap: 1rem;
   justify-content: flex-end;
 }
 
+/* Bouton de confirmation dans la fenêtre modale */
 .confirmButton {
   background-color: #3b82f6;
   color: white;
@@ -161,6 +179,7 @@
   background-color: #2563eb;
 }
 
+/* Bouton d'annulation dans la fenêtre modale */
 .cancelButton {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
@@ -176,6 +195,7 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Styles responsives pour les écrans plus petits */
 @media (max-width: 768px) {
   .imageContainer {
     height: 300px;
