@@ -1,64 +1,40 @@
-'use client';
+ 'use client';
 // Importations
-import { useState } from 'react';
+import { useActionState } from 'react';
+import  validateContact  from '@/validation/contact';
+import { contactServeur } from '@/actions/contact';
 import styles from './ContactForm.module.css';
 
-export default function ContactPage() {
-  // Etat initial du formulaire
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+export default function ContactForm() {
+  /**
+   * @param {FormData} formData 
+   */
+  const handleSubmit = async (previousState, formData) => {
+    let [error, newState] = validateContact(formData);
+    if (!error) {
+      [error, newState] = await contactServeur(formData);
+    }
+
+ 
+if (error) {
+  newState.name.value = formData.get("name");
+  newState.email.value = formData.get("email");
+  newState.subject.value = formData.get("subject");
+  newState.message.value = formData.get("message");
+}
+  return newState;
+};
+  const [formState, formAction] = useActionState(handleSubmit, {
+    name: { value: "", error: null },
+    email: { value: "", error: null },
+    subject: { value: "", error: null },
+    message: { value: "", error: null },
   });
 
-  const [errors, setErrors] = useState({});
-
-  // Fonction de validation des champs
-  const validateForm = () => {
-    let newErrors = {};
-    if (formData.name === '') {
-      newErrors.name = "Le nom est requis.";
-    }
-    if (formData.email === '') {
-      newErrors.email = "L'email est requis.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "L'email n'est pas valide.";
-    }
-    if (formData.subject === '') {
-      newErrors.subject = "Le sujet est requis.";
-    }
-    if (formData.message === '') {
-      newErrors.message = "Le message est requis.";
-    }
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  // Fonction de soumission du formulaire
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      console.log('Formulaire soumis:', formData);
-      // Réinitialiser le formulaire après soumission
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setErrors({});
-    }
-  };
-
-  // Fonction pour mettre à jour les champs du formulaire
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
   return (
-    <div className={styles.container} >
+    <div className={styles.container}>
       <h1 className={styles.title}>Contactez-nous</h1>
-      
+
       <div className={styles.content}>
         <div className={styles.contactInfo}>
           {/* Informations de contact */}
@@ -76,54 +52,51 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <form className={styles.form} onSubmit={handleSubmit} noValidate>
+        <form action={formAction} className={styles.form} noValidate>
           <div className={styles.formGroup}>
             <input
               type="text"
               name="name"
               placeholder="Votre nom"
-              value={formData.name}
-              onChange={handleChange}
+              defaultValue={formState.name.value}
               required
             />
-            {errors.name && <p className={styles.error}>{errors.name}</p>}
+            {formState.name.error && <p className={styles.error}>{formState.name.error}</p>}
           </div>
-          
+
           <div className={styles.formGroup}>
             <input
               type="email"
               name="email"
               placeholder="Votre email"
-              value={formData.email}
-              onChange={handleChange}
+              defaultValue={formState.email.value}
               required
             />
-            {errors.email && <p className={styles.error}>{errors.email}</p>}
+            {formState.email.error && <p className={styles.error}>{formState.email.error}</p>}
           </div>
-          
+
           <div className={styles.formGroup}>
             <input
               type="text"
               name="subject"
               placeholder="Sujet"
-              value={formData.subject}
-              onChange={handleChange}
+              defaultValue={formState.subject.value}
               required
             />
-            {errors.subject && <p className={styles.error}>{errors.subject}</p>}
+            {formState.subject.error && <p className={styles.error}>{formState.subject.error}</p>}
           </div>
-          
+
           <div className={styles.formGroup}>
             <textarea
               name="message"
               placeholder="Votre message"
-              value={formData.message}
-              onChange={handleChange}
+              rows="4"
+              defaultValue={formState.message.value}
               required
             ></textarea>
-            {errors.message && <p className={styles.error}>{errors.message}</p>}
+            {formState.message.error && <p className={styles.error}>{formState.message.error}</p>}
           </div>
-          
+
           <button type="submit" className={styles.submitButton}>
             Envoyer
           </button>
