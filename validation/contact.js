@@ -10,7 +10,7 @@ export default function validateContact (formData) {
         subject: { value: "", error: null },
         message: { value: "", error: null },
       };
-  
+
       let error = false;
   
       if (!name) {

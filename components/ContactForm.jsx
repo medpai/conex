@@ -1,11 +1,12 @@
  'use client';
 // Importations
-import { useActionState } from 'react';
+import { useActionState,useState } from 'react';
 import  validateContact  from '@/validation/contact';
 import { contactServeur } from '@/actions/contact';
 import styles from './ContactForm.module.css';
 
 export default function ContactForm() {
+  const [confirmationMessage, setConfirmationMessage] = useState('');
   /**
    * @param {FormData} formData 
    */
@@ -13,6 +14,9 @@ export default function ContactForm() {
     let [error, newState] = validateContact(formData);
     if (!error) {
       [error, newState] = await contactServeur(formData);
+      if (!error) {
+        setConfirmationMessage('Votre message a été envoyé avec succès.');
+      }
     }
 
  
@@ -100,7 +104,10 @@ if (error) {
           <button type="submit" className={styles.submitButton}>
             Envoyer
           </button>
+          {confirmationMessage && <p className={styles.confirmation}>{confirmationMessage}</p>}
+
         </form>
+
       </div>
     </div>
   );
