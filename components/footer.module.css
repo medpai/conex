@@ -9,6 +9,19 @@
   z-index: 1;
 }
 
+/* Classe pour le contenu accessible uniquement aux lecteurs d'écran */
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Conteneur central avec largeur maximale et espacement */
 .container {
   max-width: 1200px;
@@ -110,4 +123,3 @@
     margin-bottom: 0.5rem;
   }
 }
-

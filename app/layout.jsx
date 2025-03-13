@@ -8,14 +8,14 @@ import Footer from '@/components/footer';
 
 // Metadonnees pour la page
 export const metadata = {
-  title: "Conex",
-  description: "Connect with university projects and events",
+  title: "Conex | Connectez-vous aux projets et événements universitaires",
+  description: "Conex est une plateforme qui facilite les connexions entre professionnels et étudiants, offrant des opportunités de networking, des événements enrichissants et des projets collaboratifs.",
 };
 
 // Fonction principale pour la mise en page racine
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body>
         <Header />
         <main className={styles.main}>

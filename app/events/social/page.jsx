@@ -65,15 +65,21 @@ export default function SocialEventPage() {
           category="Social"
         />
 
-        <section className={styles.additionalInfo}>
+        <section className={styles.additionalInfo} aria-labelledby="additional-info-heading">
+          <h2 id="additional-info-heading" className={styles.visuallyHidden}>Informations supplémentaires</h2>
+          
           {/* Programme de la soiree */}
           <div className={styles.infoCard}>
-            <h2>Programme de la Soiree</h2>
-            <div className={styles.schedule}>
+            <h2 id="schedule-heading">Programme de la Soiree</h2>
+            <div className={styles.schedule} role="table" aria-labelledby="schedule-heading">
+              <div className={styles.scheduleHeader} role="row">
+                <span role="columnheader" className={styles.timeHeader}>Heure</span>
+                <span role="columnheader" className={styles.activityHeader}>Activité</span>
+              </div>
               {schedule.map((item, index) => (
-                <div key={index} className={styles.scheduleItem}>
-                  <span className={styles.time}>{item.time}</span>
-                  <span className={styles.activity}>{item.activity}</span>
+                <div key={index} className={styles.scheduleItem} role="row">
+                  <span className={styles.time} role="cell">{item.time}</span>
+                  <span className={styles.activity} role="cell">{item.activity}</span>
                 </div>
               ))}
             </div>
@@ -81,12 +87,12 @@ export default function SocialEventPage() {
 
           {/* Points forts */}
           <div className={styles.infoCard}>
-            <h2>Points Forts</h2>
-            <div className={styles.highlights}>
+            <h2 id="highlights-heading">Points Forts</h2>
+            <div className={styles.highlights} aria-labelledby="highlights-heading">
               {highlights.map((highlight, index) => (
                 <div key={index} className={styles.highlight}>
-                  <h3>{highlight.title}</h3>
-                  <p>{highlight.description}</p>
+                  <h3 id={`highlight-${index}`}>{highlight.title}</h3>
+                  <p aria-labelledby={`highlight-${index}`}>{highlight.description}</p>
                 </div>
               ))}
             </div>
@@ -94,14 +100,14 @@ export default function SocialEventPage() {
 
           {/* Liste des intervenants */}
           <div className={styles.infoCard}>
-            <h2>Intervenants</h2>
-            <div className={styles.speakers}>
+            <h2 id="speakers-heading">Intervenants</h2>
+            <div className={styles.speakers} aria-labelledby="speakers-heading">
               {speakers.map((speaker, index) => (
                 <div key={index} className={styles.speaker}>
                   <div className={styles.speakerInfo}>
-                    <h3>{speaker.name}</h3>
-                    <span className={styles.role}>{speaker.role}</span>
-                    <span className={styles.topic}>{speaker.topic}</span>
+                    <h3 id={`speaker-${index}`}>{speaker.name}</h3>
+                    <span className={styles.role} aria-labelledby={`speaker-${index}`}>{speaker.role}</span>
+                    <span className={styles.topic} aria-labelledby={`speaker-${index}`}>{speaker.topic}</span>
                   </div>
                 </div>
               ))}
@@ -110,8 +116,8 @@ export default function SocialEventPage() {
 
           {/* Avantages pour les participants */}
           <div className={styles.infoCard}>
-            <h2>Ce Que Vous Obtiendrez</h2>
-            <ul className={styles.benefits}>
+            <h2 id="benefits-heading">Ce Que Vous Obtiendrez</h2>
+            <ul className={styles.benefits} aria-labelledby="benefits-heading">
               <li>Opportunites de networking ciblees</li>
               <li>Connexions avec des leaders de l'industrie</li>
               <li>Visibilite pour votre entreprise/projet</li>

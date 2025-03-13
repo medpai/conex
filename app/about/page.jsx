@@ -1,6 +1,12 @@
-'use client';
 // Importation du fichier de styles CSS
 import styles from './page.module.css';
+
+// Métadonnées spécifiques à la page À propos
+export const metadata = {
+  title: 'À propos de Conex | Notre mission, vision et valeurs',
+  description: 'Découvrez la mission, la vision et les valeurs de Conex. Nous créons des connexions significatives entre professionnels et opportunités dans un environnement dynamique.',
+};
+
 // Exportation de la fonction AboutPage
 export default function AboutPage() {
   return (

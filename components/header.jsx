@@ -26,6 +26,18 @@ export default function Header() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Gestion de la fermeture du menu avec la touche Escape
+    useEffect(() => {
+        const handleEscapeKey = (event) => {
+            if (event.key === 'Escape' && isMenuOpen) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        document.addEventListener('keydown', handleEscapeKey);
+        return () => document.removeEventListener('keydown', handleEscapeKey);
+    }, [isMenuOpen]);
+
     // Si le composant n'est pas encore monté, il ne rend rien
     if (!mounted) {
         return null;
@@ -33,7 +45,7 @@ export default function Header() {
 
     // Composant des boutons de connexion et d'inscription
     const AuthButtons = () => (
-        <div className={styles.authButtons}>
+        <div className={styles.authButtons} role="group" aria-label="Authentification">
             <Link href="/login" className={styles.authLink}>
                 <button type="button" className={styles.loginButton}>Se connecter</button>
             </Link>
@@ -45,9 +57,9 @@ export default function Header() {
 
     return (
         // Application de la classe "scrolled" lorsque la page est défilée
-        <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+        <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`} role="banner">
             <div className={styles.logo}>
-                <Link href="/" className={styles.logoLink}>Conex</Link>
+                <Link href="/" className={styles.logoLink} aria-label="Accueil Conex">Conex</Link>
             </div>
             
             {/* Bouton pour afficher ou masquer le menu */}
@@ -55,23 +67,30 @@ export default function Header() {
                 type="button"
                 className={`${styles.menuButton} ${isMenuOpen ? styles.active : ''}`} 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label="Toggle menu"
+                aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+                aria-expanded={isMenuOpen}
+                aria-controls="navigation-menu"
             >
+                <span className={styles.visuallyHidden}>Menu</span>
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
             {/* Menu de navigation qui s'affiche lorsque "isMenuOpen" est vrai */}
-            <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ''}`}>    
-                <ul className={styles.menu}>
-                    <li><Link href="/">Accueil</Link></li>
-                    <li><Link href="/about">À propos</Link></li>
-                    <li><Link href="/contact">Contact</Link></li>
+            <nav 
+                className={`${styles.nav} ${isMenuOpen ? styles.active : ''}`}
+                id="navigation-menu"
+                aria-label="Navigation principale"
+            >    
+                <ul className={styles.menu} role="menubar">
+                    <li role="none"><Link href="/" role="menuitem" tabIndex={isMenuOpen ? 0 : -1}>Accueil</Link></li>
+                    <li role="none"><Link href="/about" role="menuitem" tabIndex={isMenuOpen ? 0 : -1}>À propos</Link></li>
+                    <li role="none"><Link href="/contact" role="menuitem" tabIndex={isMenuOpen ? 0 : -1}>Contact</Link></li>
                 </ul>
                 {/* Composant pour afficher les boutons de connexion et d'inscription */}
                 <AuthButtons />
             </nav>
         </header> 
     );
-} 
+}

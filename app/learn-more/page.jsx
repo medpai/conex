@@ -1,6 +1,7 @@
 'use client';
 //Importation du style css
 import styles from './page.module.css';
+
 // Exportation de la fonction LearnMorePage
 export default function LearnMorePage() {
   return (

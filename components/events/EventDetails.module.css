@@ -96,7 +96,7 @@
 
 /* Bouton d'inscription à l'événement */
 .joinButton {
-  background-color: #3b82f6;
+  background-color: #1d4ed8; /* Darker blue for better contrast */
   color: white;
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;
@@ -108,12 +108,12 @@
 }
 
 .joinButton:hover:not(:disabled) {
-  background-color: #2563eb;
+  background-color: #1e40af; /* Even darker on hover */
   transform: translateY(-2px);
 }
 
 .joinButton:disabled {
-  background-color: #4ade80;
+  background-color: #15803d; /* Darker green for better contrast */
   cursor: not-allowed;
 }
 
@@ -165,34 +165,38 @@
 
 /* Bouton de confirmation dans la fenêtre modale */
 .confirmButton {
-  background-color: #3b82f6;
+  background-color: #1d4ed8; /* Darker blue for better contrast */
   color: white;
-  padding: 0.5rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   font-weight: 500;
   border: none;
   cursor: pointer;
   transition: background-color 0.2s;
+  min-height: 44px; /* Minimum height for touch targets */
+  min-width: 44px; /* Minimum width for touch targets */
 }
 
 .confirmButton:hover {
-  background-color: #2563eb;
+  background-color: #1e40af; /* Even darker on hover */
 }
 
 /* Bouton d'annulation dans la fenêtre modale */
 .cancelButton {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.2); /* Increased opacity for better contrast */
   color: white;
-  padding: 0.5rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   font-weight: 500;
   border: none;
   cursor: pointer;
   transition: background-color 0.2s;
+  min-height: 44px; /* Minimum height for touch targets */
+  min-width: 44px; /* Minimum width for touch targets */
 }
 
 .cancelButton:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Styles responsives pour les écrans plus petits */

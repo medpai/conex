@@ -1,7 +1,9 @@
 'use client';
+
 //Importation
 import { useState } from 'react';
 import styles from './page.module.css';
+
 //Exportation de la fonction SignUpPage
 export default function SignUpPage() {
   // Etat initial des donnees du formulaire avec des champs vides

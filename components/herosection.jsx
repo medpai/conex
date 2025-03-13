@@ -24,11 +24,11 @@ export default function HeroSection() {
           </Link>
           
           {/* Bouton secondaire pour en savoir plus, redirige vers la page "Learn More" */}
-          <Link href="/learn-more" className={styles.secondaryButton}>
-            Learn More
+          <Link href="/learn-more" className={styles.secondaryButton} aria-label="Discover university events and community features">
+            Discover University Events
           </Link>
         </div>
       </div>
     </section>
   )
-}  
+}
