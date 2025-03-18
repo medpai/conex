@@ -5,6 +5,12 @@ import { useState, useRef } from 'react';
 import Link from 'next/link';
 import styles from './page.module.css';
 
+//Exportation des métadonnées
+export const metadata = {
+  title: 'Login | Conex',
+  description: 'Sign in to your Conex account'
+};
+
 //Exportation de la fonction LoginPage
 export default function LoginPage() {
   // Déclaration de l'état du formulaire avec useState

@@ -4,6 +4,11 @@ import EventDetails from '@/components/events/EventDetails';
 import careerImg from '@/img/career02.jpg'; 
 import styles from './page.module.css'; 
 
+export const metadata = {
+  title: 'Career Events | Conex',
+  description: 'Explore career opportunities and professional development events'
+};
+
 export default function CareerEventPage() {
     // Definition du programme de l'evenement
     const schedule = [

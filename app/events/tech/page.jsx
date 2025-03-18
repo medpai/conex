@@ -5,6 +5,12 @@ import EventDetails from '@/components/events/EventDetails';
 import techImg from '@/img/tech.jpg';
 import styles from './page.module.css';
 
+// Métadonnées de la page
+export const metadata = {
+  title: 'Tech Events | Conex',
+  description: 'Discover the latest technology events and innovations'
+};
+
 // Fonction principale pour la page des evenements tech
 export default function TechEventPage() {
   // Agenda de l'evenement

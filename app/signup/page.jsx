@@ -3,8 +3,14 @@
 //Importation
 import { useState } from 'react';
 import styles from './page.module.css';
+import SignupForm from '@/components/auth/SignupForm';
 
 //Exportation de la fonction SignUpPage
+export const metadata = {
+  title: 'Sign Up | Conex',
+  description: 'Create your Conex account to access all features'
+};
+
 export default function SignUpPage() {
   // Etat initial des donnees du formulaire avec des champs vides
   const [formData, setFormData] = useState({
