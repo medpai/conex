@@ -34,73 +34,80 @@ export default function SignUpPage() {
     <div className={styles.container}>
       <div className={styles.formContainer}>
         <h1 className={styles.title}>Creer un compte</h1>
-        
-        {/* Formulaire d'inscription */}
+
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.nameGroup}>
             <div className={styles.formGroup}>
-              <label>Prenom</label>
+              <label htmlFor="firstName">Prenom</label>
               <input
+                id="firstName"
                 type="text"
-                name="firstName" // Nom du champ pour le prenom
-                value={formData.firstName} // Valeur actuelle du champ prenom
-                onChange={handleChange} // Appel de la fonction pour gérer les changements
-                required // Champ obligatoire
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+                aria-required="true"
               />
             </div>
-            
+
             <div className={styles.formGroup}>
-              <label>Nom</label>
+              <label htmlFor="lastName">Nom</label>
               <input
+                id="lastName"
                 type="text"
                 name="lastName"
-                value={formData.lastName} 
-                onChange={handleChange} 
-                required 
+                value={formData.lastName}
+                onChange={handleChange}
+                required
+                aria-required="true"
               />
             </div>
           </div>
-          
+
           <div className={styles.formGroup}>
-            <label>Email</label>
+            <label htmlFor="email">Email</label>
             <input
+              id="email"
               type="email"
-              name="email" 
-              value={formData.email} 
-              onChange={handleChange} 
-              required 
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              aria-required="true"
             />
           </div>
-          
+
           <div className={styles.formGroup}>
-            <label>Mot de passe</label>
+            <label htmlFor="password">Mot de passe</label>
             <input
+              id="password"
               type="password"
               name="password"
-              value={formData.password} 
-              onChange={handleChange} 
-              required 
+              value={formData.password}
+              onChange={handleChange}
+              required
+              aria-required="true"
             />
           </div>
-          
+
           <div className={styles.formGroup}>
-            <label>Confirmer le mot de passe</label>
+            <label htmlFor="confirmPassword">Confirmer le mot de passe</label>
             <input
+              id="confirmPassword"
               type="password"
               name="confirmPassword"
-              value={formData.confirmPassword} 
-              onChange={handleChange} 
-              required 
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              required
+              aria-required="true"
             />
           </div>
-          
-          {/* Bouton de soumission du formulaire */}
+
           <button type="submit" className={styles.submitButton}>
             S'inscrire
           </button>
         </form>
 
-        {/* Lien pour les utilisateurs ayant deja un compte */}
         <p className={styles.loginLink}>
           Deja un compte? <a href="/login">Se connecter</a>
         </p>

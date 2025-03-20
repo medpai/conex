@@ -8,51 +8,57 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
+  transform: translateZ(0);
+  will-change: opacity;
 }
 
-/* Effet de masque et de grille sur le background */
+/* Optimisation de la grille en arriére plan */
 .hero::before {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  background-image: 
+  inset: 0;
+  background-image:
     linear-gradient(to right, rgba(79, 79, 79, 0.18) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(79, 79, 79, 0.18) 1px, transparent 1px);
   background-size: 14px 24px;
   mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+  contain: paint;
 }
 
-/* Conteneur centré du contenu */
+/* Optimisation du container */
 .container {
   position: relative;
   z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  contain: layout style;
 }
 
-/* Style du titre principal */
+/* Optimisation du titre */
 .title {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1.5rem;
   color: #ffffff;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  contain: content;
+  transform: translateZ(0);
 }
 
-/* Effet de texte avec un dégradé */
+/* Optimisation du gradiant */
 .highlight {
   background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  transform: translateZ(0);
 }
 
-/* Style du sous-titre */
+/* Optimisation des sous-titres */
 .subtitle {
   font-size: 1.25rem;
   color: #94a3b8;
@@ -61,14 +67,14 @@
   line-height: 1.6;
 }
 
-/* Groupe de boutons avec un espacement */
+/* Optimisation des groupes de boutton */
 .buttonGroup {
   display: flex;
   gap: 1rem;
   justify-content: center;
 }
 
-/* Style du bouton principal */
+/* Optimisation du primary button */
 .primaryButton {
   background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
   color: white;
@@ -76,17 +82,15 @@
   border-radius: 0.5rem;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Effet de survol pour le bouton principal */
 .primaryButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15);
 }
 
-/* Style du bouton secondaire */
+/* Optimisation du boutton secondaire */
 .secondaryButton {
   background: white;
   color: #2563eb;
@@ -94,31 +98,29 @@
   border-radius: 0.5rem;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Effet de survol pour le bouton secondaire */
 .secondaryButton:hover {
   transform: translateY(-2px);
   background: #f8fafc;
-  box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15);
 }
 
-/* Adaptation pour les petits écrans */
+/* Optimize pour les petits ecrans*/
 @media (max-width: 768px) {
   .hero {
     padding: 4rem 1rem;
   }
-  
+
   .title {
     font-size: 2.5rem;
   }
-  
+
   .subtitle {
     font-size: 1.125rem;
   }
-  
+
   .buttonGroup {
     flex-direction: column;
   }

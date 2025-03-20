@@ -5,42 +5,42 @@ import Link from 'next/link'; // Importation de la fonctionnalité Link pour la 
 
 export default function Footer() { // Définition du composant Footer
   return (
-    <footer className={styles.footer}> 
-      <div className={styles.container}> 
-        <div className={styles.grid}> 
-          
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+        <div className={styles.grid}>
+
           {/* Section "À propos de Conex" */}
           <div className={styles.section}>
-            <h3>About Conex</h3>
+            <h1>About Conex</h1>
             <p>Connecting students with exciting projects and opportunities in the university community.</p> {/* Description de Conex */}
           </div>
-          
+
           {/* Section des liens rapides */}
           <div className={styles.section}>
-            <h3>Quick Links</h3> 
+            <h2>Quick Links</h2>
             <ul> {/* Liste des liens */}
-              <li><Link href="/events" aria-label="Voir tous les événements Conex">Events</Link></li> 
+              <li><Link href="/events" aria-label="Voir tous les événements Conex">Events</Link></li>
               <li><Link href="/projects" aria-label="Découvrir les projets disponibles">Projects</Link></li>
               <li><Link href="/login" aria-label="Se connecter à votre compte">Login</Link></li>
               <li><Link href="/signup" aria-label="Créer un nouveau compte">Sign Up</Link></li>
             </ul>
           </div>
-          
+
           {/* Section des ressources */}
           <div className={styles.section}>
-            <h3>Resources</h3> 
-            <ul> 
-              <li><Link href="/help" aria-label="Accéder au centre d'aide">Help Center</Link></li> 
-              <li><Link href="/guidelines" aria-label="Consulter les règles de la communauté">Community Guidelines</Link></li> 
-              <li><Link href="/privacy" aria-label="Lire notre politique de confidentialité">Privacy Policy</Link></li> 
-              <li><Link href="/terms" aria-label="Consulter les conditions d'utilisation">Terms of Service</Link></li> 
+            <h2>Resources</h2>
+            <ul>
+              <li><Link href="/help" aria-label="Accéder au centre d'aide">Help Center</Link></li>
+              <li><Link href="/guidelines" aria-label="Consulter les règles de la communauté">Community Guidelines</Link></li>
+              <li><Link href="/privacy" aria-label="Lire notre politique de confidentialité">Privacy Policy</Link></li>
+              <li><Link href="/terms" aria-label="Consulter les conditions d'utilisation">Terms of Service</Link></li>
             </ul>
           </div>
-          
+
           {/* Section pour les liens vers les réseaux sociaux */}
           <div className={styles.section}>
-            <h3>Connect With Us</h3> 
-            <div className={styles.social}> 
+            <h2>Connect With Us</h2>
+            <div className={styles.social}>
               {/* Lien vers Twitter */}
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Suivez-nous sur Twitter">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -64,7 +64,7 @@ export default function Footer() { // Définition du composant Footer
             </div>
           </div>
         </div>
-        
+
         {/* Section du bas avec la mention de copyright */}
         <div className={styles.bottom}>
           <p>&copy; {new Date().getFullYear()} Conex. All rights reserved.</p> {/* Affiche l'année actuelle et le texte de copyright */}

@@ -1,7 +1,7 @@
- 'use client';
+'use client';
 // Importations
-import { useActionState,useState } from 'react';
-import  validateContact  from '@/validation/contact';
+import { useActionState, useState } from 'react';
+import validateContact from '@/validation/contact';
 import { contactServeur } from '@/actions/contact';
 import styles from './ContactForm.module.css';
 
@@ -19,15 +19,14 @@ export default function ContactForm() {
       }
     }
 
- 
-if (error) {
-  newState.name.value = formData.get("name");
-  newState.email.value = formData.get("email");
-  newState.subject.value = formData.get("subject");
-  newState.message.value = formData.get("message");
-}
-  return newState;
-};
+    if (error) {
+      newState.name.value = formData.get("name");
+      newState.email.value = formData.get("email");
+      newState.subject.value = formData.get("subject");
+      newState.message.value = formData.get("message");
+    }
+    return newState;
+  };
   const [formState, formAction] = useActionState(handleSubmit, {
     name: { value: "", error: null },
     email: { value: "", error: null },
@@ -43,7 +42,7 @@ if (error) {
         <div className={styles.contactInfo}>
           {/* Informations de contact */}
           <div className={styles.infoItem}>
-            <h3>Email</h3>
+            <h2>Email</h2>
             <p>contact@conex.com</p>
           </div>
           <div className={styles.infoItem}>

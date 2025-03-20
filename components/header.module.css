@@ -124,7 +124,8 @@
 }
 
 /* Style des boutons de connexion et inscription */
-.loginButton, .signupButton {
+.loginButton,
+.signupButton {
     padding: 0.75rem 1.25rem;
     border-radius: 0.5rem;
     font-weight: 600;
@@ -249,6 +250,7 @@
 
 /* Styles pour les écrans de moins de 768px */
 @media (max-width: 768px) {
+
     /* Affiche le bouton du menu hamburger */
     .menuButton {
         display: block;
@@ -284,7 +286,7 @@
     }
 
     /* Masque les boutons d'authentification en mode mobile */
-    .header > .authButtons {
+    .header>.authButtons {
         display: none;
     }
 

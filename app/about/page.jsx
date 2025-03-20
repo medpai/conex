@@ -17,7 +17,7 @@ export default function AboutPage() {
             dans un environnement professionnel dynamique.
           </p>
         </section>
-        
+
         {/* Section sur la vision de l'entreprise */}
         <section className={styles.section}>
           <h2>Notre Vision</h2>

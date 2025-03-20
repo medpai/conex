@@ -41,7 +41,7 @@ export default function EventSection() {
       <div className={styles.container}>
         <h2 className={styles.heading}>Upcoming Events</h2> {/* Titre principal */}
         <p className={styles.subheading}>Discover exciting events and activities happening on campus</p> {/* Sous-titre */}
-        
+
         {/* Grille d'événements, chaque événement est affiché dans un composant EventCard */}
         <div className={styles.grid}>
           {upcomingEvents.map((event, index) => (

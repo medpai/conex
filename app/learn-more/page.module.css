@@ -1,8 +1,8 @@
-/* Container principal avec une couleur de fond sombre */
+/* Container principal */
 .container {
   min-height: 100vh;
   background: rgb(2, 6, 23);
-  color: white;
+  color: #ffffff;
 }
 
 /* Section héro avec un fond en dégradé et une image */
@@ -10,7 +10,7 @@
   padding: 8rem 2rem 4rem;
   text-align: center;
   background: linear-gradient(to bottom, rgba(2, 6, 23, 0.8), rgb(2, 6, 23)),
-              url('/hero-bg.jpg') center/cover;
+    url('/hero-bg.jpg') center/cover;
 }
 
 /* Titre avec un effet de dégradé sur le texte */
@@ -20,6 +20,7 @@
   margin-bottom: 1rem;
   background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -53,37 +54,44 @@
 }
 
 /* Grilles de disposition flexible pour les fonctionnalités, étapes, et bénéfices */
-.features, .steps, .benefits {
+.features,
+.steps,
+.benefits {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
 /* Styles des éléments de la fonctionnalité et des bénéfices */
-.feature, .benefit {
-  background: rgba(255, 255, 255, 0.05);
+.feature,
+.benefit {
+  background: rgba(30, 41, 59, 0.8);
   padding: 2rem;
   border-radius: 1rem;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: transform 0.3s ease;
 }
 
 /* Effet de survol pour les éléments de fonctionnalité et bénéfices */
-.feature:hover, .benefit:hover {
+.feature:hover,
+.benefit:hover {
   transform: translateY(-5px);
 }
 
 /* Titre des fonctionnalités et bénéfices avec couleur spécifique */
-.feature h3, .benefit h3 {
+.feature h3,
+.benefit h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  color: #2563eb;
+  color: #93c5fd;
+  font-weight: 600;
 }
 
 /* Texte des fonctionnalités et bénéfices */
-.feature p, .benefit p {
-  color: rgba(255, 255, 255, 0.8);
+.feature p,
+.benefit p {
+  color: #ffffff;
   line-height: 1.6;
 }
 
@@ -92,6 +100,8 @@
   text-align: center;
   padding: 2rem;
   position: relative;
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 1rem;
 }
 
 /* Numéro des étapes dans un cercle avec dégradé */
@@ -111,18 +121,19 @@
 .step h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  color: #2563eb;
+  color: #93c5fd;
+  font-weight: 600;
 }
 
 .step p {
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffffff;
 }
 
-/* Section Call-to-Action avec fond flouté */
+/* Section Call-to-Action avec fond floute */
 .cta {
   text-align: center;
   padding: 4rem 2rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(30, 41, 59, 0.9);
   border-radius: 1rem;
   backdrop-filter: blur(10px);
 }
@@ -131,12 +142,12 @@
 .cta h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #2563eb;
+  color: #93c5fd;
 }
 
 /* Texte du Call-to-Action */
 .cta p {
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
   margin-bottom: 2rem;
 }
 
@@ -149,37 +160,61 @@
 }
 
 /* Styles généraux des boutons */
-.primaryButton, .secondaryButton {
+.primaryButton,
+.secondaryButton {
   padding: 1rem 2rem;
   border-radius: 0.5rem;
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.3s ease;
   text-decoration: none;
+  font-size: 1.125rem;
 }
 
-/* Bouton principal avec dégradé */
+/* Bouton principal avec couleur solide */
 .primaryButton {
-  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
-  color: white;
+  background: #1d4ed8;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Bouton secondaire avec fond transparent et bordure */
 .secondaryButton {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 /* Effet de survol pour le bouton principal */
 .primaryButton:hover {
+  background: #1e40af;
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.4);
 }
 
 /* Effet de survol pour le bouton secondaire */
 .secondaryButton:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.25);
   transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* État actif des boutons */
+.primaryButton:active {
+  background: #1e3a8a;
+  transform: translateY(0);
+}
+
+.secondaryButton:active {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(0);
+}
+
+/* État focus des boutons pour l'accessibilité */
+.primaryButton:focus,
+.secondaryButton:focus {
+  outline: 3px solid #60a5fa;
+  outline-offset: 2px;
 }
 
 /* Réajustement des styles pour les petits écrans */
@@ -200,7 +235,9 @@
     margin-bottom: 4rem;
   }
 
-  .features, .steps, .benefits {
+  .features,
+  .steps,
+  .benefits {
     grid-template-columns: 1fr;
   }
 }

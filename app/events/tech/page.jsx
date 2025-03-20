@@ -55,7 +55,7 @@ export default function TechEventPage() {
           participants="150"
           category="Technology"
         />
-           {/* Programme de l'evenement */}
+        {/* Programme de l'evenement */}
         <section className={styles.additionalInfo}>
           <div className={styles.infoCard}>
             <h2>Programme de l'evenement</h2>
@@ -83,7 +83,7 @@ export default function TechEventPage() {
               ))}
             </div>
           </div>
-           {/* ce que vous apprendrez */}
+          {/* ce que vous apprendrez */}
           <div className={styles.infoCard}>
             <h2>Ce que vous apprendrez</h2>
             <ul className={styles.learningPoints}>

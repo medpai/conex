@@ -1,7 +1,7 @@
 //Importations
-import styles from './eventcard.module.css'; 
-import Image from 'next/image'; 
-import Link from 'next/link'; 
+import styles from './eventcard.module.css';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function EventCard({ title, date, location, category, image, description }) {
   // Fonction qui retourne le "slug" correspondant à la catégorie d'événement 
@@ -15,13 +15,13 @@ export default function EventCard({ title, date, location, category, image, desc
   };
 
   return (
-    <div className={styles.card}> 
-      <div className={styles.imageContainer}> 
+    <div className={styles.card}>
+      <div className={styles.imageContainer}>
         <Image
           src={image} // Source de l'image
           alt={title} // Texte alternatif pour l'image
           fill // Remplissage de l'espace de l'image en fonction du conteneur
-          className={styles.image} 
+          className={styles.image}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <span className={styles.category}>{category}</span> {/* Affichage de la catégorie de l'événement */}
@@ -47,11 +47,11 @@ export default function EventCard({ title, date, location, category, image, desc
           </div>
         </div>
         <p className={styles.description}>{description}</p> {/* Affichage de la description de l'événement */}
-        <Link 
+        <Link
           href={`/events/${getCategorySlug(category)}`} // Lien vers la page de l'événement en fonction de sa catégorie
-          className={styles.button} 
+          className={styles.button}
         >
-          Join Event 
+          Join Event
         </Link>
       </div>
     </div>

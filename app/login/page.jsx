@@ -7,15 +7,15 @@ import styles from './page.module.css';
 export default function LoginPage() {
   // Déclaration de l'état du formulaire avec useState
   const [formData, setFormData] = useState({
-    email: '',           
-    password: '',       
+    email: '',
+    password: '',
     rememberMe: false    // Case à cocher pour se souvenir de l'utilisateur
   });
 
   // Fonction pour gérer la soumission du formulaire
   const handleSubmit = (e) => {
     e.preventDefault();  // Empêche le comportement par défaut de soumettre le formulaire
-    
+
     console.log('Form submitted:', formData); // Affiche les données du formulaire dans la console
   };
 
@@ -32,45 +32,53 @@ export default function LoginPage() {
     <div className={styles.container}>
       <div className={styles.formContainer}>
         <h1 className={styles.title}>Connexion</h1>
-        
+
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
-            <label>Email</label>
+            <label htmlFor="email">Email</label>
             <input
+              id="email"
               type="email"
               name="email"
               value={formData.email}
-              onChange={handleChange}  // Appel de la fonction handleChange à chaque modification du champ
-              required  // Le champ est obligatoire
+              onChange={handleChange}
+              required
+              aria-required="true"
+              aria-label="Adresse email"
             />
           </div>
-          
+
           <div className={styles.formGroup}>
-            <label>Mot de passe</label>
+            <label htmlFor="password">Mot de passe</label>
             <input
+              id="password"
               type="password"
               name="password"
               value={formData.password}
-              onChange={handleChange}  // Appel de la fonction handleChange à chaque modification du champ
-              required  // Le champ est obligatoire
+              onChange={handleChange}
+              required
+              aria-required="true"
+              aria-label="Mot de passe"
             />
           </div>
-          
+
           <div className={styles.formOptions}>
             <label className={styles.checkbox}>
               <input
+                id="rememberMe"
                 type="checkbox"
                 name="rememberMe"
                 checked={formData.rememberMe}
-                onChange={handleChange}  // Appel de la fonction handleChange pour le changement de l'état de la case à cocher
+                onChange={handleChange}
+                aria-label="Se souvenir de moi"
               />
               <span>Se souvenir de moi</span>
             </label>
-            <Link href="/forgot-password" className={styles.forgotPassword}>
+            <Link href="/#" className={styles.forgotPassword}>
               Mot de passe oublié?
             </Link>
           </div>
-          
+
           <button type="submit" className={styles.submitButton}>
             Se connecter
           </button>

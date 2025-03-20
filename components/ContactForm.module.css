@@ -34,23 +34,31 @@
 
 /* Style des elements d'information */
 .infoItem {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
   border-radius: 1rem;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Titre des elements d'information */
 .infoItem h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: #2563eb;
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.infoItem h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #60a5fa;
+  font-weight: 600;
 }
 
 /* Texte des elements d'information */
 .infoItem p {
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
   line-height: 1.6;
 }
 
@@ -59,11 +67,11 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
   padding: 2rem;
   border-radius: 1rem;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Styles des champs du formulaire */
@@ -71,10 +79,10 @@
 .formGroup textarea {
   width: 100%;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 0.5rem;
-  color: white;
+  color: #ffffff;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
@@ -117,27 +125,30 @@
   .content {
     grid-template-columns: 1fr;
   }
-  
+
   /* Reorganisation des sections sur mobile */
   .contactInfo {
     order: 2;
   }
-  
+
   .form {
     order: 1;
   }
 }
 
 .error {
-  color: red;
+  color: #ff4a4a;
+  font-weight: 500;
+  margin-top: 0.5rem;
 }
 
 .confirmation {
-  color: #2563eb;
+  color: #93c5fd;
   font-size: 1rem;
   margin-top: 1rem;
   text-align: center;
   padding: 5px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
+  font-weight: 500;
 }

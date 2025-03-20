@@ -11,25 +11,25 @@ export default function HeroSection() {
         <h1 className={styles.title}>
           Connect, Discover, Thrive in  <span className={styles.highlight}>University Life</span>
         </h1>
-        
+
         {/* Sous-titre avec une brève description de ce que propose le site */}
         <p className={styles.subtitle}>
           Join events, clubs, and connect with peers - all in one place!
         </p>
-        
+
         <div className={styles.buttonGroup}>
           {/* Bouton principal pour commencer, redirige vers la page de connexion */}
-          <Link 
-            href="/login" 
+          <Link
+            href="/login"
             className={styles.primaryButton}
             aria-label="Se connecter à votre compte Conex ou créer un nouveau compte"
           >
             Get Started
           </Link>
-          
+
           {/* Bouton secondaire pour en savoir plus, redirige vers la page "Learn More" */}
-          <Link 
-            href="/learn-more" 
+          <Link
+            href="/learn-more"
             className={styles.secondaryButton}
             aria-label="En savoir plus sur les services et fonctionnalités de Conex"
           >

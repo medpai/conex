@@ -31,29 +31,17 @@ export default function Header() {
         return null;
     }
 
-    // Composant des boutons de connexion et d'inscription
-    const AuthButtons = () => (
-        <div className={styles.authButtons}>
-            <Link href="/login" className={styles.authLink}>
-                <button type="button" className={styles.loginButton}>Se connecter</button>
-            </Link>
-            <Link href="/signup" className={styles.authLink}>
-                <button type="button" className={styles.signupButton}>S'inscrire</button>
-            </Link>
-        </div>
-    );
-
     return (
         // Application de la classe "scrolled" lorsque la page est défilée
         <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
             <div className={styles.logo}>
                 <Link href="/" className={styles.logoLink}>Conex</Link>
             </div>
-            
+
             {/* Bouton pour afficher ou masquer le menu */}
-            <button 
+            <button
                 type="button"
-                className={`${styles.menuButton} ${isMenuOpen ? styles.active : ''}`} 
+                className={`${styles.menuButton} ${isMenuOpen ? styles.active : ''}`}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Toggle menu"
             >
@@ -63,15 +51,13 @@ export default function Header() {
             </button>
 
             {/* Menu de navigation qui s'affiche lorsque "isMenuOpen" est vrai */}
-            <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ''}`}>    
+            <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ''}`}>
                 <ul className={styles.menu}>
                     <li><Link href="/">Accueil</Link></li>
                     <li><Link href="/about">À propos</Link></li>
                     <li><Link href="/contact">Contact</Link></li>
                 </ul>
-                {/* Composant pour afficher les boutons de connexion et d'inscription */}
-                <AuthButtons />
             </nav>
-        </header> 
+        </header>
     );
 } 

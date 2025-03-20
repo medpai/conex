@@ -1,17 +1,17 @@
 'use client';
 import Image from 'next/image';
 import styles from './EventDetails.module.css';
-import { useState } from 'react';
+import { useState, memo } from 'react';
 
-const EventDetails = ({ 
-  title, 
-  date, 
-  description, 
-  imagePath, 
-  location, 
+const EventDetails = memo(function EventDetails({
+  title,
+  date,
+  description,
+  imagePath,
+  location,
   participants,
-  category 
-}) => {
+  category
+}) {
   // Déclare l'état pour savoir si l'utilisateur est inscrit
   const [isRegistered, setIsRegistered] = useState(false);
   // Déclare l'état pour afficher ou non la fenêtre modale
@@ -34,20 +34,23 @@ const EventDetails = ({
         <Image
           src={imagePath} // Source de l'image de l'événement
           alt={title} // Texte alternatif pour l'image
-          fill // Remplit l'espace disponible pour l'image
-          priority // Charge l'image en priorité
-          quality={90} // Qualité de l'image (90%)
+          width={800}
+          height={400}
+          priority={true}
+          quality={75}
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..."
+          sizes="(max-width: 768px) 300px, 500px"
           className={styles.eventImage} // Applique les styles de l'image
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 1200px" // Gestion des tailles d'image selon la largeur de l'écran
         />
       </div>
-      
+
       <div className={styles.contentContainer}>
         <span className={`${styles.category} ${styles[category.toLowerCase()]}`}>
           {category} {/* Affiche la catégorie de l'événement */}
         </span>
         <h1 className={styles.title}>{title}</h1> {/* Affiche le titre de l'événement */}
-        
+
         <div className={styles.metadata}>
           {/* Affiche les informations de l'événement (date, lieu, nombre de participants) */}
           <div className={styles.metaItem}>
@@ -68,9 +71,9 @@ const EventDetails = ({
           {description} {/* Affiche la description de l'événement */}
         </div>
 
-        <button 
+        <button
           onClick={handleJoinEvent} // Appel la fonction pour afficher la modale
-          className={styles.joinButton} 
+          className={styles.joinButton}
           disabled={isRegistered} // Désactive le bouton si l'utilisateur est déjà inscrit
         >
           {isRegistered ? 'Registered ✓' : 'Join Event'} {/* Affiche un texte différent selon l'état d'inscription */}
@@ -84,13 +87,13 @@ const EventDetails = ({
             <h2>Confirm Registration</h2> {/* Titre de la modale */}
             <p>Are you sure you want to register for {title}?</p> {/* Question pour confirmer l'inscription */}
             <div className={styles.modalButtons}>
-              <button 
+              <button
                 onClick={handleConfirmRegistration} // Confirme l'inscription
                 className={styles.confirmButton}
               >
                 Confirm
               </button>
-              <button 
+              <button
                 onClick={() => setShowModal(false)} // Annule l'inscription et ferme la modale
                 className={styles.cancelButton}
               >
@@ -102,6 +105,6 @@ const EventDetails = ({
       )}
     </div>
   );
-};
+});
 
 export default EventDetails;
