@@ -1,8 +1,13 @@
-'use client';
 //Importation des composants
 import EventDetails from '@/components/events/EventDetails';
 import socialImg from '@/img/social.jpg';
 import styles from './page.module.css';
+
+// Export metadata for SEO
+export const metadata = {
+  title: 'Événements Sociaux | Conex',
+  description: 'Participez à nos événements sociaux universitaires pour élargir votre réseau, rencontrer de nouvelles personnes et créer des liens durables dans un cadre convivial.'
+};
 
 export default function SocialEventPage() {
   // Programme de la soiree

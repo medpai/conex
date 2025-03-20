@@ -19,13 +19,21 @@ export default function HeroSection() {
         
         <div className={styles.buttonGroup}>
           {/* Bouton principal pour commencer, redirige vers la page de connexion */}
-          <Link href="/login" className={styles.primaryButton}>
+          <Link 
+            href="/login" 
+            className={styles.primaryButton}
+            aria-label="Se connecter à votre compte Conex ou créer un nouveau compte"
+          >
             Get Started
           </Link>
           
           {/* Bouton secondaire pour en savoir plus, redirige vers la page "Learn More" */}
-          <Link href="/learn-more" className={styles.secondaryButton}>
-            Learn More
+          <Link 
+            href="/learn-more" 
+            className={styles.secondaryButton}
+            aria-label="En savoir plus sur les services et fonctionnalités de Conex"
+          >
+            En savoir plus sur Conex
           </Link>
         </div>
       </div>

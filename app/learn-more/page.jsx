@@ -1,6 +1,12 @@
-'use client';
 //Importation du style css
 import styles from './page.module.css';
+
+// Définition des métadonnées pour le SEO
+export const metadata = {
+  title: 'En savoir plus sur Conex | Plateforme de networking universitaire',
+  description: 'Découvrez comment Conex vous aide à vous connecter avec d\'autres étudiants, participer à des événements exclusifs et développer votre réseau professionnel.'
+};
+
 // Exportation de la fonction LearnMorePage
 export default function LearnMorePage() {
   return (

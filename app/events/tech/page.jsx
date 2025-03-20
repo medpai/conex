@@ -1,9 +1,13 @@
-'use client';
-
 // Importation du composant EventDetails
 import EventDetails from '@/components/events/EventDetails';
 import techImg from '@/img/tech.jpg';
 import styles from './page.module.css';
+
+// Export metadata for SEO
+export const metadata = {
+  title: 'Hackathon IA & Innovation 2024 | Événements Tech | Conex',
+  description: 'Rejoignez notre hackathon exceptionnel centré sur l\'intelligence artificielle et l\'innovation technologique. Collaborez avec des experts, apprenez les dernières technologies et développez des solutions innovantes.'
+};
 
 // Fonction principale pour la page des evenements tech
 export default function TechEventPage() {

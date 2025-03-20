@@ -1,8 +1,13 @@
-'use client';
 //Importations
 import EventDetails from '@/components/events/EventDetails';
 import careerImg from '@/img/career02.jpg'; 
 import styles from './page.module.css'; 
+
+// Export metadata for SEO
+export const metadata = {
+  title: 'Événements Carrière | Conex',
+  description: 'Découvrez nos événements carrière universitaires - salons d\'emploi, ateliers CV, simulations d\'entretien et plus encore pour booster votre parcours professionnel.'
+};
 
 export default function CareerEventPage() {
     // Definition du programme de l'evenement
